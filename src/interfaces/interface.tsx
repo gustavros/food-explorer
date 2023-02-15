@@ -1,6 +1,7 @@
 export interface IPratos {
-  nome: string;
-  descricao: string;
-  preco: number;
-  imagem: string;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  tags: string[];
 }

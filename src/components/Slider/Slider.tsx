@@ -6,6 +6,7 @@ import { Navigation } from "swiper";
 
 import "swiper/css/navigation";
 import "swiper/css";
+import { Link } from "react-router-dom";
 
 interface Props {
   title: string;
@@ -24,30 +25,32 @@ export const Slider = ({ title, category }: Props) => {
         modules={[Navigation]}
         className="mySwiper"
       >
-        {category.map((prato) => (
-          <SwiperSlide className={styles.card} key={prato.nome}>
-            <img src={prato.imagem} alt="" />
+        {category.map((dish) => (
+          <Link to={`/dishs/${dish.name}`} key={dish.name}>
+            <SwiperSlide className={styles.card}>
+              <img src={dish.image} alt="" />
 
-            <h2>{prato.nome}</h2>
-            <p className={styles.description}>{prato.descricao}</p>
+              <h2>{dish.name}</h2>
+              <p className={styles.description}>{dish.description}</p>
 
-            <p className={styles.price}>
-              {prato.preco.toLocaleString("pt-br", {
-                style: "currency",
-                currency: "BRL",
-              })}
-            </p>
+              <p className={styles.price}>
+                {dish.price.toLocaleString("pt-br", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
+              </p>
 
-            <div>
-              <span>
-                <Minus />
-                01
-                <Plus />
-              </span>
+              <div>
+                <span>
+                  <Minus />
+                  01
+                  <Plus />
+                </span>
 
-              <button>Incluir</button>
-            </div>
-          </SwiperSlide>
+                <button>Incluir</button>
+              </div>
+            </SwiperSlide>
+          </Link>
         ))}
       </Swiper>
     </div>
