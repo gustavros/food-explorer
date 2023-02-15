@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  align-items: center;
+
+  height: 260px;
+  width: 1120px;
+
+  max-width: 1366px;
+  margin-inline: auto;
+
+  background: linear-gradient(180deg, #091e26 0%, #00131c 100%);
+  border-radius: 8px;
+
+  margin-block: 164px 62px;
+
+  img {
+    object-fit: cover;
+    margin-bottom: 147px;
+  }
+
+  & > div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+
+    h3 {
+      font-weight: 500;
+      font-size: 40px;
+      line-height: 56px;
+
+      color: var(--light-300);
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+
+      color: var(--light-300);
+    }
+  }
+}

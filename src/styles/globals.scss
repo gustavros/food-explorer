@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
+:root {
+  --text: #94a1b2;
+  --text-light: #fffffe;
+  --text-dark: #72757e;
+  --text-placeholder: #44475a;
+
+  --background: #161626;
+  --background-light: rgba(40, 42, 54, 0.4);
+
+  --white: rgba(255, 255, 255, 0.1);
+
+  --family-font: Poppins, sans-serif;
+
+  --toast-viewport-padding: 25px;
+
+  --width-normal: 1266px;
+  --width-medium: 900px;
+  --width-small: 600px;
+
+  --mauve1: #161618;
+  --mauve2: #1c1c1f;
+  --mauve3: #232326;
+  --mauve4: #28282c;
+  --mauve5: #2e2e32;
+  --mauve6: #34343a;
+  --mauve7: #3e3e44;
+  --mauve8: #504f57;
+  --mauve9: #706f78;
+  --mauve10: #7e7d86;
+  --mauve11: #a09fa6;
+  --mauve12: #ededef;
+
+  --light-100: #ffffff;
+  --light-200: #fffaf1;
+  --light-300: #e1e1e6;
+  --light-400: #c4c4cc;
+  --light-500: #7c7c8a;
+  --light-600: #76797b;
+  --light-700: #4d585e;
+
+  --dark-100: #000405;
+  --dark-200: #00070a;
+  --dark-300: #000204;
+  --dark-400: #000a0f;
+  --dark-500: #000c12;
+  --dark-600: #00111a;
+  --dark-700: #001119;
+  --dark-800: #0d161b;
+  --dark-900: #0d1d25;
+  --dark-1000: #192227;
+
+  --tins-tomato-100: #750310;
+  --tins-tomato-200: #92000e;
+  --tins-tomato-300: #ab222e;
+  --tins-tomato-400: #ab4d55;
+
+  --tins-carrot-100: #fba94c;
+  --tins-mint-100: #04d361;
+
+  --tins-cake-200: #82f3ff;
+  --tins-cake-100: #065e7c;
+}
+
+:where(html) {
+  block-size: 100%;
+  font-family: var(--family-font);
+  line-height: 1.5;
+
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :where(:focus-visible) {
+    transition: outline-offset 145ms cubic-bezier(0.25, 0, 0.4, 1);
+  }
+  :where(:not(:active):focus-visible) {
+    transition-duration: 0.25s;
+  }
+}
+
+:where(:not(:active):focus-visible) {
+  outline-offset: 5px;
+}
+
+:where(body) {
+  min-block-size: 100%;
+  background: var(--dark-400);
+}
+
+:where(body, button, textarea, input) {
+  color: var(--text-light);
+  font: 400 1rem var(--family-font);
+}
+
+:where(h1, h2, h3, h4, h5, h6, strong, b) {
+  font-weight: 600;
+  font-family: var(--family-font);
+}
+
+:where(
+    a[href],
+    area,
+    button,
+    label[for],
+    summary,
+    [tabindex]:not([tabindex*="-"])
+  ) {
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+fieldset {
+  border: 0;
+}
+
+button {
+  border: 0;
+  background: transparent;
+}
