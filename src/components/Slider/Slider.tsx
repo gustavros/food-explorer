@@ -2,11 +2,11 @@ import { IPratos } from "../../interfaces/interface";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Minus, Plus } from "phosphor-react";
 import styles from "./styles.module.scss";
+import { Link } from "react-router-dom";
 import { Navigation } from "swiper";
 
 import "swiper/css/navigation";
 import "swiper/css";
-import { Link } from "react-router-dom";
 
 interface Props {
   title: string;
@@ -22,13 +22,17 @@ export const Slider = ({ title, category }: Props) => {
         slidesPerView={4}
         spaceBetween={27}
         navigation={true}
+        rewind={true}
         modules={[Navigation]}
         className="mySwiper"
       >
         {category.map((dish) => (
-          <Link to={`/dishs/${dish.name}`} key={dish.name}>
-            <SwiperSlide className={styles.card}>
-              <img src={dish.image} alt="" />
+          <SwiperSlide key={dish.id}>
+            <Link
+              to={`/dishes/${dish.category}/${dish.id}`}
+              className={styles.card}
+            >
+              <img src={dish.image} alt={dish.description} />
 
               <h2>{dish.name}</h2>
               <p className={styles.description}>{dish.description}</p>
@@ -39,18 +43,8 @@ export const Slider = ({ title, category }: Props) => {
                   currency: "BRL",
                 })}
               </p>
-
-              <div>
-                <span>
-                  <Minus />
-                  01
-                  <Plus />
-                </span>
-
-                <button>Incluir</button>
-              </div>
-            </SwiperSlide>
-          </Link>
+            </Link>
+          </SwiperSlide>
         ))}
       </Swiper>
     </div>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo-food-explorer.png";
+import { Header } from "../../components/Header/Header";
 
 import styles from "./styles.module.scss";
 

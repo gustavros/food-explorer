@@ -1,19 +1,27 @@
 .container {
   padding-block: 40px;
 
-  max-width: 1366px;
+  max-width: 1368px;
   margin-inline: auto;
 
   h1 {
     margin-bottom: 23px;
+    margin-inline: 20px;
+
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 140%;
+
+    color: var(--light-300);
   }
 
   .card {
     background-color: var(--dark-200);
     border: 1px solid var(--dark-300);
+    border-radius: 8px;
 
     width: 304px !important;
-    height: 500px !important;
+    height: 450px !important;
 
     display: flex;
     flex-direction: column;
@@ -59,32 +67,6 @@
 
       text-align: center;
       color: var(--tins-cake-200);
-    }
-
-    & > div {
-      display: flex;
-      gap: 16px;
-
-      span {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 32px;
-
-        svg {
-          cursor: pointer;
-        }
-      }
-
-      button {
-        background-color: var(--tins-tomato-100);
-        border-radius: 5px;
-
-        padding: 12px 24px;
-      }
     }
   }
 }

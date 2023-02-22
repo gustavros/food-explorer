@@ -1,4 +1,5 @@
 import { MagnifyingGlass, Receipt, SignOut } from "phosphor-react";
+import { Link } from "react-router-dom";
 import Logo from "../../assets/logo-food-explorer.png";
 
 import styles from "./styles.module.scss";
@@ -7,7 +8,9 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div>
-        <img src={Logo} alt="Logo Food Explorer" />
+        <Link to={"/"}>
+          <img src={Logo} alt="Logo Food Explorer" />
+        </Link>
 
         <div>
           <input type="text" placeholder="Busque por pratos ou ingredientes" />
